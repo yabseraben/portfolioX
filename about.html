@@ -1,290 +1,628 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.cdnfonts.com/css/new-walt-disney-font" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Shrikhand' rel='stylesheet'>
-    <link href="https://db.onlinewebfonts.com/c/fc13291877fa0c0e6e6d614326699903?family=Kepler+W03+Light+SCd+Cp" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/tt-norms-pro" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/ba57058827.js" crossorigin="anonymous"></script>
-    <title>About Me</title>
-    <link rel="icon" href="tab.png" type="image/png">
-    <style>
-        .text-content h3 {
-    margin-top: 20px;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1440" />
+  <title>About — YABSERA BENYAM</title>
+  <meta name="description" content="About Yabsera Benyam" />
+  <link rel="icon" href="yabidabi.png" type="image/png">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#000; --muted:#999; --bg:#f6f5f4; --dot:#f3382c;
+      --card:#ffffff; --line:#fff; --navH:90px;
+      --container:1440px;
+      --cardRadius: 22px;
+      --mediaRadius: 12px;
+      --gutterX: 80px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      background:var(--bg); color:var(--ink);
+      cursor: none; /* hide default cursor */
+    }
+    .cursor-dot{
+      position: fixed;
+      left: 0; top: 0;
+      width: 28px; height: 28px;
+      background: url('clicker.png') center/contain no-repeat;
+      pointer-events: none;
+      transform: translate(-40%, -50%);
+      z-index: 9999;
+      transition: transform 0.1s ease-out;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:var(--container);margin:0 auto}
 
-#yeah {
-    text-align: center;
-    margin-left: -90px;
-}
+    header{position: static;width: 100%;z-index: 10;}
+    .nav{
+      height:var(--navH);
+      display:flex;align-items:flex-end;justify-content:space-between;
+      padding:0 var(--gutterX) 10px;
+      max-width:var(--container);margin:0 auto;position:relative;
+    }
+    .nav-left,.nav-right{display:flex;gap:20px;align-items:center}
+    .nav-link{font-weight:700; letter-spacing:.02em; color:black; padding:10px}
 
-.scrolling-container {
-  height: 50px; /* Adjust as needed */
-  overflow: hidden;
-  position: relative;
-  color: white;
-}
+    footer{padding:0 var(--gutterX) 0}
+    .footer{display:flex;gap:139px;padding:59px 0 0}
+    .col{display:flex;flex-direction:column;gap:10px;width:15%}
+    .col h3{font-size:18px;font-weight:700;color:#999}
+    .col a{font-weight:500;color:black}
+    .thanks{display:flex;justify-content:flex-end;padding:0 var(--gutterX) 55px var(--gutterX)}
+    .thanks p{font-size:21px;font-weight:700}
+    .thanks .dot{color:var(--dot)}
 
-.scroll-container {
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 200px; /* Adjust as needed */
-    margin-top: -120px;
-}
+    .about-wrap{padding:40px var(--gutterX) 64px; margin-top: 40px;}
 
-.scroll-text {
-    display: inline-block;
-    position: relative;
-    animation: scroll-left 10s linear infinite;
-    font-size: 100px;
-    background: linear-gradient(to right, darkblue, purple, green);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    white-space: nowrap;
-     font-family: 'TT Norms Pro', sans-serif;
-}
+    .about-hero{position: relative;}
+    .about-hero::after{content:""; display:block; clear:both;}
 
-@keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
+    .polaroids{
+      position:relative;
+      float: right;
+      width: 720px;
+      height: 360px;
+      margin: 8px -60px 40px 120px;
+      user-select:none;
+    }
 
-.highlight {
-  font-weight: bold;
-  transition: color 0.5s ease;
-  font-family: 'TT Norms Pro', sans-serif;
-}
+    .hover-label {
+      position: absolute;
+      bottom: -20px;
+      left: 40%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      letter-spacing: 0.03em;
+       font-family: 'Caveat', 'Patrick Hand', 'Shadows Into Light', cursive; /* ← new font stack */
+  font-weight: 600;
+  color: #8c8c8c;   
+    }
 
-.blue { color: blue; }
-.purple { color: purple; }
-.green { color: green; }
+    .about-bio{max-width: 820px; margin-left: 10px;}
+    .about-bio h1{
+      font-family: "Inter",system-ui;
+      letter-spacing: -0.02em;
+      font-size: 32px;
+      font-weight: normal;
+      line-height: 1.06;
+      color:#111;
+      margin: 6px 0 28px 0;
+    }
+    .about-bio p.lead, .about-bio p{
+      font-family: "Inter",system-ui;
+      font-weight: lighter;
+      font-size: 16px;
+      line-height: 1.6;
+      color:gray;
+      margin-bottom: 26px;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+    .ph{
+      position:absolute;
+      width: 230px; aspect-ratio: 3 / 4;
+      height: 260px;
+      background:#fff; border-radius: var(--mediaRadius);
+      border: 4px solid #fff; overflow:hidden;
+      box-shadow:0 30px 60px rgba(0,0,0,.12),0 12px 28px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.06);
+      transform-origin: 50% 70%;
+      transition: transform .38s cubic-bezier(.22,1,.36,1), box-shadow .38s ease, filter .38s ease;
+    }
+    .ph img{width:100%;height:100%;object-fit:cover;display:block;transition: transform .38s cubic-bezier(.22,1,.36,1);}
+    .ph figcaption{position:absolute; left:10px; right:10px; bottom:12px; padding:0; font:700 13px/1.1 "Inter",system-ui; color:#fff; background:transparent; border-radius:0; box-shadow:none; opacity:0; transform:translateY(6px); text-shadow:0 2px 4px rgba(0,0,0,.45); transition:opacity .25s ease, transform .25s ease; pointer-events:none;}
+    .ph:hover{transform:rotate(0) translateY(-10px) scale(1.08);box-shadow:0 42px 88px rgba(0,0,0,.18),0 20px 40px rgba(0,0,0,.12),0 6px 16px rgba(0,0,0,.10);filter:saturate(1.08) contrast(1.03);z-index:999;}
+    .ph:hover img{transform:scale(1.06);}
+    .ph:hover figcaption{opacity:1;transform:translateY(0)}
 
-.animated {
-  animation: fadeIn 2s ease forwards;
-}
-#mini h2{
-    font-size: 50px;
-}
+    .ph.p1{left:0;top:60px;transform:rotate(-5.5deg)}
+    .ph.p2{left:120px;top:20px;transform:rotate(-1.8deg)}
+    .ph.p3{left:245px;top:36px;transform:rotate(3.5deg)}
+    .ph.p4{left:370px;top:0;transform:rotate(-2.5deg)}
 
-.text-content2{
-    margin-bottom: -50px;
-}
-
-    </style>
+    @media (max-width:1200px){
+      .polaroids{width:640px;height:360px;margin:8px -40px 40px 96px;}
+      .ph{width:220px}
+      .ph.p4{left:340px}
+    }
+    @media (max-width:980px){
+      .polaroids{float:none;width:560px;height:360px;margin:20px auto 0;}
+      .about-bio{max-width:100%}
+      .ph{width:210px}
+      .ph.p3{left:220px}
+      .ph.p4{display:none}
+    }
+  </style>
 </head>
 <body>
-         <nav>
-         <a href="index.html">
-        <div class="logo"> <img src="logo.png"></div>
-    </a>
-        <ul class="nav-list">
-            <a href="index.html">
-            <li>HOME</li>
-        </a>
-              <a href="leadership.html">
-            <li>INVOLVEMENT</li>
-        </a>
-              <a href="about.html">
-            <li>ABOUT</li>
-        </a>
-              <a href="yabserabenyam.pdf">
-            <li>RESUME</li>
-        </a>
-        </ul>
-    </nav>
-
-    <section id="details">
-        <div id=yeah>
-            <span> Hey there! 👋</span>
+  <div class="cursor-dot"></div>
+  <main class="container">
+    <header>
+      <nav class="nav">
+        <div class="nav-left on-gray">
+          <a class="nav-link" href="index.html">HOME.</a>
+          <a class="nav-link" href="playground.html">PLAYGROUND.</a>
+          <a class="nav-link" href="about.html">ABOUT.</a>
         </div>
+        <div class="nav-right on-gray">
+          <a class="nav-link" href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a class="nav-link" href="mailto:benyam@usc.edu">EMAIL ↗</a>
+          <a class="nav-link" href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME ↗</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="about-wrap">
+      <div class="about-hero">
+        <div class="polaroids">
+          <figure class="ph p1"><img src="matchy.avif"><figcaption>matcha corner 🍵</figcaption></figure>
+          <figure class="ph p2"><img src="babi.png"><figcaption>"what's for dinner mom?"</figcaption></figure>
+          <figure class="ph p3"><img src="foody.png"><figcaption>weekend brunch</figcaption></figure>
+          <figure class="ph p4"><img src="snowb.png"><figcaption>this is me!</figcaption></figure>
+          <div class="hover-label">Hover!</div>
+        </div>
+        <div class="about-bio">
+          <h1>Nice to meet you! I'm Yabi!</h1>
+          <p class="lead">I’m a creative ENTJ who lives for good food, board games, and spotify playlists! I grew up in Addis Ababa, Ethiopia, which gave me an appreciation for diverse cultures that I try to bring into my work.</p>
+          <p>I am earning my BA in Communication and minor in Data Science at USC and am currently pursuing an MS in Business Analytics, though a joint degree program.</p>
+          <p>Creating has always been a huge part of my life, and I fell in love with data and numbers along the way. Marketing is my medium, guided by empathy and endless curiosity for people, and I love exploring all the ways it can show up in physical and digital spaces. My experiences inspire me to use my skills to create accessible stories about technology for people across <br> different cultures and backgrounds.</p>
+        </div>
+      </div>
     </section>
+  </main>
 
-                    <div class="item4-content">
-        <div class="stuff2">
-            <div id="photor">
-                <img src="yabi.jpeg" alt="yabi photo">
-            </div>
-
-            <div id="photor2">
-                <img src="curly.png" alt="arrow">
-            </div>
-
-            <div id="textnow">
-                <div class="text-content2">
-                    <h3>I’m Yabsera, a Communication major with a minor in Data Science from Virginia and a current student at USC ✌️</h3>
-                </div>
-            </div>
-        </div>
+  <section class="experience-section" id="experience">
+  <div class="exp-grid">
+    <div class="exp-column">
+      <h3 class="exp-title">EXPERIENCE</h3>
+      <ul class="exp-list">
+        <li><img src="hei.png" alt="Google"><div><strong>OpenAI</strong><br>UX Design Intern<br><span>SUMMER 2025</span></div></li>
+        <li><img src="snor.png" alt="Rave Trade"><div><strong>Snowflake</strong><br>Product Designer<br><span>SUMMER 2024</span></div></li>
+        <li><img src="salesfor.webp" alt="LinkedIn"><div><strong>Salesforce</strong><br>Product Design Intern<br><span>SUMMER 2023</span></div></li>
+        <li><img src="sc.jpg" alt="ClearBlade"><div><strong>USC Office of Culture and Ethics</strong><br>UX Design Intern<br><span>SUMMER 2022</span></div></li>
+      </ul>
     </div>
 
-       <div class="item4-content">
-            <div id="textnow">
-                <div class="text-content22">
-                       <h3>I've always been fascinated by the intersection between <span class="highlight blue">Technology</span>, <span class="highlight purple">Data</span>, and <span class="highlight green">People</span>.
-</h3><br><br>
-                    <h3> Which is why I chose to delve into Marketing!</h3>
-                </div>
-            </div>
-</div>
- <div class="item4-content">
-            <div id="textnow">
-                   <div class="text-content223">
-<h3>With a keen eye for detail 👁 and an optimistic <br>mindset 🤩, I aim to bring ideas to life 🌱 by <br>crafting experiences that are...</h3>
-</div>
-</div>
-
-</div>
-   <div class="scroll-container">
-    <div class="scroll-text">
-        SEAMLESS- THOUGHTFUL- INSPIRE JOY
-      
+    <div class="exp-column">
+      <h3 class="exp-title">EDUCATION</h3>
+      <ul class="exp-list">
+        <li><img src="sc.jpg" alt="UPenn"><div><strong>University of Southern California</strong><br>MS Business Analytics<br><span>AUG 2025 – DEC 2026</span></div></li>
+        <li><img src="sc.jpg" alt="USC"><div><strong>University of Southern California</strong><br>BFA Design<br><span>JAN 2022 – AUG 2026</span></div></li>
+      </ul>
     </div>
-</div>
 
+    <div class="exp-column">
+      <h3 class="exp-title">COMMUNITY</h3>
+      <ul class="exp-list">
+        <li><img src="mlt.png" alt="Penn Medicine"><div><strong>Managment Leaders of Tommorrow</strong><br>Student Mentor<br><span>SEP 2023– JAN 2024</span></div></li>
+        <li><img src="ics.png" alt="Boundless Brilliance"><div><strong>Addis Grdauates</strong><br>Co-Founder<br><span>AUG 2022 – AUG 2024</span></div></li>
+        <li><img src="rf.jpeg" alt="Ron Finley Project"><div><strong>Ron Finley Project</strong><br>Product Marketing Manager<br><span>SEP 2021 – APR 2023</span></div></li>
+      </ul>
+    </div>
 
-
-<div class="info-section">
-  <div id="mini">
-    <h2>Thanks for stopping by I'd love to get in touch!</h2>
-    <h3>Connect with me via LinkedIn or my email :~)</h3>
-   <div class="contact-info">
-    <p class="contact-item" data-content=" benyam@usc.edu">MY EMAIL</p>
-    <p class="icon"><a href="https://www.linkedin.com/in/yabsera-benyam" target="_blank">MY LINKEDIN</a></p>
-       <p class="contact-item" data-content="+1 (240) 788 0380">+1 (240) 788 0380</p>
+    <div class="exp-column">
+      <h3 class="exp-title">ACTIVITIES</h3>
+      <ul class="exp-list">
+        <li><img src="bethe.jpeg" alt="Wharton Innovation"><div><strong>Be the Match</strong><br>Director of Communications</div></li>
+        <li><img src="ino.avif" alt="Innovative Design USC"><div><strong>Innovative Design at USC</strong><br>VP of Externals</div></li>
+        <li><img src="code.avif" alt="Code the Change"><div><strong>Code the Change</strong><br>Product Marketing Mentor</div></li>
+        <li><img src="doz.jpeg" alt="Sigma Eta Pi"><div><strong>Delta Omicron Delta</strong><br>Vice President of Communications</div></li>
+      </ul>
+    </div>
   </div>
- </div>
+</section>
 
- <div class="image-container">
-    <img id="mainImage" src="fact.png" alt="Main Image" />
+<style>
+.experience-section{padding:64px var(--gutterX) 80px; background:var(--bg);}
+.exp-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:60px; align-items:flex-start;}
+.exp-title{font-weight: lighter; font-size:14px; letter-spacing:.05em; color:#999; margin-bottom:24px; text-transform:uppercase;}
+.exp-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:28px;}
+.exp-list li{display:flex; gap:14px; align-items:center;}
+.exp-list img{width:36px; height:36px; border-radius:50%; object-fit:cover;}
+.exp-list strong{font-weight:lighter; font-size:16px; color:#111;}
+.exp-list div{font-family:"Inter",system-ui; font-size:15px; line-height:1.5; color:#555;}
+.exp-list span{font-size:13px; color:#999; display:block; margin-top:2px;}
+@media(max-width:1100px){.exp-grid{grid-template-columns:repeat(2,1fr); gap:40px;}}
+@media(max-width:700px){.exp-grid{grid-template-columns:1fr; gap:32px;}}
+</style>
+  <!-- Marketing section (six cards in one row, perfectly matched to About section styles) -->
+<section class="marketing-wrap" id="marketing">
+  <div class="marketing-head">
+    <h1 class="marketing-title">Marketing</h1>
+    <p class="lead marketing-sub">These are areas in marketing that I <strong>specialize</strong> in or have had the most exposure with through experiences.</p>
+  </div>
 
-   <div id="hiddenImages" class="hidden">
-        <img id="image1" src="hobby.jpg" alt="Image 1" />
-        <img id="image2" src="morning.jpg" alt="Image 2" />
-        <img id="image3" src="netflix.jpg" alt="Image 3" />
-        <img id="image4" src="author.jpg" alt="Image 4" />
-        <img id="image5" src="food.jpg" alt="Image 4" />
-    </div>
-</div>
+  <div class="marketing-grid">
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M8 9h8"/></svg></div><h3 class="skill-title">Digital Marketing</h3></article>
 
-<div id="testey">
-<a href="mailto:benyam@usc.edu" target="_blank">
-<img src="arrow.png" alt="Next" id="next-slide" class="slideshow-button2">
-</a>
-</div>
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l18-9-9 18-2-7z"/></svg></div><h3 class="skill-title">Brand Messaging</h3></article>
 
-<div id="testey2">
-<a href="https://www.linkedin.com/in/yabsera-benyam" target="_blank">
-<img src="arrow.png" alt="Next" id="next-slide" class="slideshow-button2">
-</a>
-</div>
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/><circle cx="18" cy="7" r="1.5"/></svg></div><h3 class="skill-title">Demand Generati</h3></article>
 
-<div id="testey3">
-<img src="arrow.png" alt="Next" id="next-slide" class="slideshow-button2">
-</div>
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6M9 9h6v6"/></svg></div><h3 class="skill-title">Product Marketing</h3></article>
 
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 15l3-3 3 2 4-5"/><circle cx="18" cy="7" r="1.5"/></svg></div><h3 class="skill-title">Marketing Analytics</h3></article>
 
-<div id="footer">
-  <section class="social-icons">
-        <a href="mailto:benyam@usc.edu"><i class="fa fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/yabsera-benyam" target="_blank"><i class="fa fa-linkedin"></i></a>
-        <a href="tel:+12407880380"><i class="fa fa-phone"></i></a>
-  </section>
-</div>
+    <article class="skill-card"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div><h3 class="skill-title">Web Design</h3></article>
+  </div>
+</section>
 
-<script>
-        // Add event listeners to contact items for the click-to-copy functionality
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const content = this.getAttribute('data-content');
-                navigator.clipboard.writeText(content).then(() => {
-                    alert("Copied to clipboard: " + content);
-                }).catch(err => {
-                    console.error('Could not copy text: ', err);
-                });
-            });
-        });
-    </script>
-
- 
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-
-<script>
-  document.querySelectorAll('h2 span').forEach(span => {
-    span.addEventListener('mouseover', () => {
-        span.style.color = 'red'; // Change to your desired hover color
-    });
-
-    span.addEventListener('mouseout', () => {
-        span.style.color = ''; // Revert to the original color
-    });
-  });
-</script>
-
-<script>
-    document.getElementById('mainImage').addEventListener('click', function() {
-        var hiddenImages = document.getElementById('hiddenImages');
-        if (hiddenImages.style.display === "block") {
-            hiddenImages.style.display = "none";
-        } else {
-            hiddenImages.style.display = "block";
-        }
-    });
-</script>
-
-<script>
-  function scrollText() {
-    var container = document.querySelector('.scrolling-container');
-    var text = container.getElementsByTagName('h2')[0];
-    var step = 1; // Speed of the scrolling
-    var pos = 0;
-
-    setInterval(function() {
-      if (pos < -text.offsetHeight) {
-        pos = container.offsetHeight;
-      } else {
-        pos -= step;
-      }
-      text.style.transform = 'translateY(' + pos + 'px)';
-    }, 50); // Interval in milliseconds
+<style>
+  .marketing-wrap { padding: 56px var(--gutterX) 72px; }
+  .marketing-head { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .marketing-title {
+    font-family: "Inter", system-ui;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.06;
+    color: #111;
+    margin: 6px 0 28px 0;
+  }
+  .marketing-sub {
+    font-family: "Inter", system-ui;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 26px;
   }
 
-  window.onload = scrollText;
-</script>
- <script>
-document.addEventListener("scroll", function() {
-  var highlights = document.querySelectorAll('.highlight');
-  highlights.forEach(function(el) {
-    if (isElementInViewport(el)) {
-      el.classList.add('animated');
-    }
-  });
-});
+  .marketing-grid {
+    margin-top: 36px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(6, 1fr);
+  }
 
-function isElementInViewport(el) {
-  var rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  .skill-card {
+    position: relative;
+    background: var(--bg);
+    border-radius: 18px;
+    padding: 30px 22px 26px;
+    box-shadow: 0 10px 22px rgba(0,0,0,.08), 0 3px 8px rgba(0,0,0,.05);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(0,0,0,.12), 0 8px 18px rgba(0,0,0,.08);
+    background: #fff;
+  }
+  .skill-icon {
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+  }
+  .skill-title {
+    font-family: "Inter", system-ui;
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+  }
+  .skill-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    pointer-events: none;
+    background: radial-gradient(240px 160px at var(--mx,50%) var(--my,20%), rgba(255,255,255,.55), transparent 60%);
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  .skill-card:hover::after { opacity: 1; }
+  /* ===== Full-bleed photo strip ===== */
+/* ===== Full-width photo strip (contained & responsive) ===== */
+.full-bleed-photo{
+  /* no viewport breakout; keep it within your page width */
+  width: 100%;
+  padding: 0 var(--gutterX);
+  margin: 23px 0;                 /* space above/below the image */
+  display: flex;
+  justify-content: center;
 }
 
+.full-bleed-photo img{
+  display: block;
+  width: 100%;
+  max-width: 1600px;               /* <- adjust this number to change final size */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+  object-fit: contain;            /* prevent cropping */
+}
+
+@media (max-width: 700px){
+  .full-bleed-photo img{
+    max-width: 92vw;              /* keep it comfy on small screens */
+    border-radius: 10px;
+  }
+}
+
+
+</style>
+
+<script>
+(function(){
+  const grid = document.querySelector('.marketing-grid');
+  if(!grid) return;
+  grid.addEventListener('mousemove', (e)=>{
+    const t = e.target.closest('.skill-card');
+    if(!t) return;
+    const r = t.getBoundingClientRect();
+    t.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    t.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+})();
 </script>
+  <script>
+  document.addEventListener('mousemove', e => {
+    const cursor = document.querySelector('.cursor-dot');
+    if(cursor){
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    }
+  });
+  </script>
+
+
+<!-- ====== Skills / Favorites Section (matches About fonts; hover -> white; color code effect) ====== -->
+<section class="about-panels" id="skills-favorites">
+  <div class="panel grid">
+    <!-- Left: Skills -->
+    <article class="info-card gallery-card" id="photos-card">
+  <h1 class="marketing-title">MY LIFE IN PHOTOS</h1>
+
+  <div class="gallery">
+    <!-- top row: 2 big -->
+    <a class="photo-card item a" href="#"><img src="hrad.jpeg" alt="picnic / friends"></a>
+    <a class="photo-card item b" href="#"><img src="yuhhu.avif"  alt="dumpling night"></a>
+
+    <!-- bottom row: 3 smaller -->
+    <a class="photo-card item c" href="#"><img src="YES.jpg"   alt="campus / moment"></a>
+    <a class="photo-card item d" href="#"><img src="yessy.avif"  alt="city sunset"></a>
+    <a class="photo-card item e" href="#"><img src="beacch.jpeg" alt="biking"></a>
+  </div>
+</article>
+
+
+    <!-- Right: Favorites -->
+    <article class="info-card favorites" id="favorites-card">
+      <h1 class="marketing-title">CURRENT FAVORITES.</h1>
+      <dl class="fav-grid">
+        <div class="fav-row">
+          <dt>COLORS</dt>
+          <dd>
+            <span class="hex" data-color="#F3382C">#F3382C</span>,
+            <span class="hex" data-color="#6EA3FF">#6EA3FF</span>
+          </dd>
+        </div>
+        <div class=\"fav-row\">
+          <dt>FONTS</dt>
+          <dd>
+            <span class=\"font-sample\" data-font=\"Satoshi\">Satoshi</span>,
+            <span class=\"font-sample\" data-font=\"Playfair Display\">Playfair Display</span>
+          </dd>
+        </div>
+        <div class="fav-row">
+          <dt>FOODS</dt>
+          <dd>paneer tikka masala, tteokbokki (korean spicy rice cakes)</dd>
+        </div>
+        <div class="fav-row">
+          <dt>MOVIES</dt>
+          <dd>Mission Impossible: Fallout, Inside Out 2</dd>
+        </div>
+        <div class="fav-row">
+          <dt>SEASON</dt>
+          <dd>"I am an autumn." (tell me if you get the reference)</dd>
+        </div>
+        <div class="fav-row">
+          <dt>OTHERS</dt>
+          <dd>substack, mangoes, trying new recipies shops, working out, going to art museums, journaling, long walks, sunny weather</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<style>
+  /* Photo gallery (inside the left info-card) */
+.gallery{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:120px;
+}
+.photo-card{
+  display:block; position:relative;
+  background:var(--bg); border-radius:18px; overflow:hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.22), 0 10px 22px rgba(0,0,0,.06);
+  transition: background .25s ease, box-shadow .25s ease, transform .25s cubic-bezier(.22,1,.36,1);
+}
+.photo-card:hover{
+  background:#fff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.18), 0 24px 48px rgba(0,0,0,.10);
+  transform: translateY(-4px);
+}
+.photo-card img{
+  width:100%; height:100%; object-fit:cover; display:block; border-radius:inherit;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), filter .35s ease;
+}
+.photo-card:hover img{ transform:scale(1.03); filter:saturate(1.05); }
+
+/* layout like your screenshot: two large on top, three smaller below */
+.gallery .item.a{ grid-column:1/4; grid-row:1/5; }
+.gallery .item.b{ grid-column:4/7; grid-row:1/5; }
+.gallery .item.c{ grid-column:1/3; grid-row:5/8; }
+.gallery .item.d{ grid-column:3/5; grid-row:5/8; }
+.gallery .item.e{ grid-column:5/7; grid-row:5/8; }
+
+/* responsive */
+@media (max-width:1100px){
+  .gallery{ grid-template-columns:repeat(4,1fr); grid-auto-rows:110px; }
+  .gallery .item.a{ grid-column:1/3; grid-row:1/5; }
+  .gallery .item.b{ grid-column:3/5; grid-row:1/5; }
+  .gallery .item.c{ grid-column:1/3; grid-row:5/8; }
+  .gallery .item.d{ grid-column:3/5; grid-row:5/8; }
+  .gallery .item.e{ grid-column:1/5; grid-row:8/10; }
+}
+@media (max-width:640px){
+  .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:100px; }
+  .gallery .item.a{ grid-column:1/3; grid-row:1/4; }
+  .gallery .item.b{ grid-column:1/3; grid-row:4/7; }
+  .gallery .item.c{ grid-column:1/2; grid-row:7/9; }
+  .gallery .item.d{ grid-column:2/3; grid-row:7/9; }
+  .gallery .item.e{ grid-column:1/3; grid-row:9/11; }
+}
+
+  .about-panels{padding:56px var(--gutterX) 80px}
+  .about-panels .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+
+  .info-card{
+    background: var(--bg);
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.22), 0 10px 22px rgba(0,0,0,.06);
+    padding: 28px 36px 34px;
+    transition: background .25s ease, box-shadow .25s ease, transform .25s cubic-bezier(.22,1,.36,1);
+  }
+  .info-card:hover{background:#fff; box-shadow: inset 0 0 0 1px rgba(0,0,0,.18), 0 24px 48px rgba(0,0,0,.10)}
+
+  .panel-title{ /* match About h1 */
+    font-family:"Inter",system-ui; font-size:32px; font-weight:700; line-height:1.06; color:#111; margin:0 0 24px 0;
+  }
+
+  .skills-list{list-style:none; margin:0; padding:0; display:grid; gap:22px}
+  .skills-list li{display:grid; grid-template-columns: 40px 1fr; align-items:start; gap:12px}
+  .skills-list .num{font:700 20px/1 "Inter",system-ui; color:#444}
+  .skills-list .txt{font:400 20px/1.5 "Inter",system-ui; color:#555}
+
+  .fav-grid{display:grid; gap:18px; margin:0}
+  .fav-row{display:block; margin-bottom:10px}
+  dt{font:700 16px/1.4 \"Inter\",system-ui; color:#444; margin:0 0 6px 0; font-weight: normal;}
+  dd{margin:0; font:400 16px/1.6 \"Inter\",system-ui; color:#555; font-weight: lighter;}
+
+  .hex{display:inline-block; transition:color .25s ease, text-shadow .25s ease}
+  .font-sample[data-font=\"Satoshi\"]{ font-family: \"Satoshi\", system-ui, sans-serif; }
+  .font-sample[data-font=\"Playfair Display\"]{ font-family: \"Playfair Display\", serif; }
+
+  @media (max-width:1100px){
+    .about-panels .grid{grid-template-columns:1fr}
+  }
+
+  /* === Gallery panel adjustments (left side) === */
+
+/* Make left gallery column wider than the right favorites column */
+.about-panels .grid{
+  /* was: grid-template-columns: 1fr 1fr; */
+  grid-template-columns: 1.6fr 1fr;
+}
+
+/* Remove the border/box look from the gallery side */
+.info-card.gallery-card{
+  background: transparent;     /* no panel background */
+  box-shadow: none;            /* remove inset 1px “border” + drop shadow */
+  padding: 0;                  /* gallery hugs the content */
+}
+
+/* Prevent the gallery panel from turning white or lifting on hover */
+.info-card.gallery-card:hover{
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Tighten the title spacing for the gallery since we removed panel padding */
+.info-card.gallery-card .panel-title{
+  margin: 0 0 16px 0;
+}
+
+/* === FORCE About header/footer to match Home EXACTLY === */
+
+/* Home uses this bg tone site-wide */
+:root { --bg: #e8e8e8; }
+
+/* Header spacing matches Home (not var(--gutterX)) */
+.nav {
+  padding: 0 40px 10px !important;
+  max-width: 1440px !important;
+}
+
+/* Ensure Home’s font/weight/letter-spacing on nav links */
+.nav .nav-link {
+  font-family: "Satoshi", system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: .02em !important;
+  color: black !important;
+  padding: 10px !important;
+}
+
+/* Neutralize the .on-gray color from About so links stay black like Home */
+header .on-gray { color: inherit !important; }
+
+/* Footer spacing + look matches Home */
+footer { padding: 0 40px 0 !important; }
+.footer { display: flex; gap: 139px; padding: 59px 0 0 !important; }
+.col { display: flex; flex-direction: column; gap: 10px; width: 15%; }
+.col h3 { font-size: 18px; font-weight: 700; color: #999; }
+.col a  { font-weight: 500; color: black; }
+.thanks { display: flex; justify-content: flex-end; padding: 0 40px 55px 40px !important; }
+.thanks p { font-size: 21px; font-weight: 700; }
+.thanks .dot { color: var(--dot); }
+
+
+</style>
+
+<script>
+// Color-code effect: when hovering the RIGHT FAVORITES card, color swatches change
+(function(){
+  const favorites = document.getElementById('favorites-card');
+  if(!favorites) return;
+  const hexes = favorites.querySelectorAll('.hex');
+  const orig = [...hexes].map(h => getComputedStyle(h).color);
+  favorites.addEventListener('mouseenter', ()=>{
+    hexes.forEach(h => { h.style.color = h.dataset.color; h.style.textShadow = '0 2px 6px rgba(0,0,0,.25)'; });
+  });
+  favorites.addEventListener('mouseleave', ()=>{
+    hexes.forEach((h,i) => { h.style.color = orig[i]; h.style.textShadow = 'none'; });
+  });
+})();
+</script>
+
+<!-- Full-width photo strip -->
+<section class="full-bleed-photo">
+  <img src="pie.png" alt="Yabi" loading="lazy">
+</section>
+
+<!-- Footer (copied 1:1 from Home) -->
+<footer>
+      <div class="footer">
+        <div class="col">
+          <h3>Connect.</h3>
+          <a href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a href="mailto:benyam@usc.edu">EMAIL ↗</a>
+        </div>
+        <div class="col">
+          <h3>Navigate.</h3>
+          <a href="index.html">HOME</a>
+          <a href="#index.html">PROJECTS</a>
+          <a href="playground.html">PLAYGROUND</a>
+          <a href="about.html">ABOUT</a>
+          <a href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME</a>
+        </div>
+      </div>
+      <div class="thanks">
+        <p>[THANK YOU FOR VISITING]<span class="dot">.</span></p>
+      </div>
+    </footer>
+
 
 </body>
 </html>

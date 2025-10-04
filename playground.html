@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1440" />
+  <title>Playground — YABSERA BENYAM</title>
+  <meta name="description" content="Playground — coming soon" />
+  <link rel="icon" href="yabidabi.png" type="image/png">
+
+  <!-- Fonts to match your site -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#000;
+      --muted:#999;
+      --bg:#e8e8e8;        /* same home background */
+      --dot:#f3382c;
+      --navH:90px;
+      --container:1440px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:"Satoshi", system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+      background:var(--bg); color:var(--ink);
+    }
+    a{color:inherit;text-decoration:none}
+
+    .container{width:100%;max-width:var(--container);margin:0 auto}
+
+    /* ====== NAV (same spacing/weight as home) ====== */
+    header{position: static; width:100%; z-index:10;}
+    .nav{
+      height:var(--navH);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      padding:0 40px 10px;     /* even 40px like home */
+      max-width:var(--container);
+      margin:0 auto;
+      position:relative;
+    }
+    .nav-left,.nav-right{display:flex;gap:20px;align-items:center}
+    .nav-link{
+      font-weight:700; letter-spacing:.02em; color:#000; padding:10px;
+    }
+
+    /* ====== HERO: Coming soon ====== */
+    .hero{
+      min-height:calc(100vh - var(--navH));
+      padding:48px 40px 40px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:24px;
+      text-align:center;
+    }
+    .soon-emoji{
+      font-size:64px; line-height:1;
+      animation: bob 1.4s ease-in-out infinite;
+      display:inline-block;
+    }
+    @keyframes bob{
+      0%,100%{ transform: translateY(0); }
+      50%    { transform: translateY(-6px); }
+    }
+    .soon-title{
+      font-weight:900;
+      font-size:58px; line-height:1.05; letter-spacing:-.02em;
+    }
+    .soon-sub{
+      max-width:740px;
+      font-weight:700;
+      font-size:20px; line-height:1.45;
+      color:#222;
+    }
+    .soon-note{
+      font-size:16px; color:#666;
+    }
+
+    /* little digging animation (pure CSS/SVG) */
+    .dig-wrap{
+      margin-top:22px;
+      display:flex; align-items:center; justify-content:center; gap:12px;
+      color:#444;
+    }
+    .pile{
+      width:90px; height:36px; position:relative;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,.12));
+    }
+    .pile svg{
+      display:block; width:100%; height:100%;
+    }
+    .shovel{
+      width:44px; height:44px; position:absolute;
+      left:50%; top:-6px; transform-origin: 6px 36px;
+      animation: dig 1.6s ease-in-out infinite;
+    }
+    @keyframes dig{
+      0%,100%{ transform: translate(-10px,0) rotate(-14deg); }
+      50%    { transform: translate(6px,-6px) rotate(10deg); }
+    }
+
+    /* ====== FOOTER (same as home) ====== */
+    footer{padding:0 40px 0}
+    .footer{display:flex; gap:139px; padding:59px 0 0}
+    .col{display:flex; flex-direction:column; gap:10px; width:15%}
+    .col h3{font-size:18px; font-weight:700; color:#999}
+    .col a{font-weight:500; color:#000}
+    .thanks{
+      display:flex; justify-content:flex-end;
+      padding:0 40px 55px 40px;
+    }
+    .thanks p{font-size:21px; font-weight:700}
+    .thanks .dot{color:var(--dot)}
+
+    /* small helper on very narrow viewports */
+    @media (max-width: 700px){
+      .soon-title{ font-size:40px; }
+      .soon-sub{ font-size:18px; padding:0 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- ===== NAV ===== -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="nav-link" href="index.html#projects">HOME.</a>
+          <a class="nav-link" href="index.html#playground">PLAYGROUND.</a>
+          <a class="nav-link" href="about.html">ABOUT.</a>
+        </div>
+        <div class="nav-right">
+          <a class="nav-link" href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a class="nav-link" href="mailto:benyam@usc.edu">EMAIL ↗</a>
+          <a class="nav-link" href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME ↗</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== PLAYGROUND HERO ===== -->
+    <section class="hero">
+      <div class="soon-emoji" aria-hidden="true">⏰</div>
+      <h1 class="soon-title">Playground is brewing…</h1>
+      <p class="soon-sub">
+        I’m building a corner for tiny experiments, micro-interactions, and fun side projects.
+        Check back!
+      </p>
+
+      <div class="dig-wrap" aria-label="under construction animation">
+        <!-- dirt mound -->
+        <div class="pile">
+          <svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <path d="M5 55 Q 30 20 80 28 T 155 55 Z" fill="#c9c2b8"/>
+            <ellipse cx="40" cy="50" rx="14" ry="5" fill="#b9b2a8" opacity=".7"/>
+            <ellipse cx="100" cy="52" rx="18" ry="6" fill="#b9b2a8" opacity=".7"/>
+          </svg>
+          <!-- shovel -->
+          <svg class="shovel" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <!-- handle -->
+            <rect x="22" y="4" width="4" height="28" rx="2" fill="#8b5e3c"/>
+            <!-- grip -->
+            <rect x="18" y="2" width="12" height="6" rx="3" fill="#68452b"/>
+            <!-- blade -->
+            <path d="M14 28 L34 28 Q37 36 28 40 Q19 44 14 36 Z" fill="#9aa4ad" stroke="#8a939c" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="soon-note">🚧 Under construction</span>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER (same as home) ===== -->
+    <footer>
+      <div class="footer">
+        <div class="col">
+          <h3>Connect.</h3>
+          <a href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a href="mailto:benyam@usc.edu">EMAIL ↗</a>
+        </div>
+        <div class="col">
+          <h3>Navigate.</h3>
+          <a href="index.html">HOME</a>
+          <a href="index.html#projects">PROJECTS</a>
+          <a href="playground.html">PLAYGROUND</a>
+          <a href="about.html">ABOUT</a>
+          <a href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME</a>
+        </div>
+      </div>
+      <div class="thanks">
+        <p>[THANK YOU FOR VISITING]<span class="dot">.</span></p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

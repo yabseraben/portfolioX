@@ -7504,3 +7504,68 @@ a {
   font-style: italic;
   font-display: swap;
 }
+
+   hero-heading-left,
+.section,
+.section-2,
+.section-3,
+.section-4,
+.section-timeline,
+.pain-point,
+.new-div,
+.div-block-18,
+.div-block-29,
+.clearblade,
+.rfp,
+.breeze,
+.footer {
+  background-color: transparent !important;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, span, div {
+  color: #000 !important;
+}
+
+/* Make nav bar links black */
+nav, 
+nav .nav-link, 
+.nav-list li, 
+.nav-list li a {
+  color: #000 !important;
+}
+
+:root { --page-bg: #f6f5f4; }  /* <-- set your exact light bg here */
+
+html { background-color: var(--page-bg) !important; }
+
+body,
+body.body,
+body.body-2,
+body.body-3,
+body.body-4,
+body.body-5,
+body.body-6,
+body.body-7,
+body.body-8 {
+  background-color: var(--page-bg) !important;
+}
+
+/* Make nav bar links black */
+nav, 
+nav .nav-link, 
+.nav-list li, 
+.nav-list li a {
+  color: #000 !important;
+}
+
+/* Keep pain point text white */
+.pain-point-text {
+  color: #fff !important;
+}
+
+/* Make tab numbers (tab-text inside tabs) white */
+.tabs .tab-text {
+  color: #fff !important;
+  background-color: black !important;
+      
+            
