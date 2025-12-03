@@ -13,19 +13,18 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1440" />
-  <title>Playground — YABSERA BENYAM</title>
-  <meta name="description" content="Playground — coming soon" />
+  <title>Writing — YABSERA BENYAM</title>
+  <meta name="description" content="Technical writing and research" />
   <link rel="icon" href="yabidabi.png" type="image/png">
 
-  <!-- Fonts to match your site -->
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --ink:#000;
       --muted:#999;
-      --bg:#e8e8e8;        /* same home background */
+      --bg:#e8e8e8;
+      --card-bg:#d4d4d4;
       --dot:#f3382c;
       --navH:90px;
       --container:1440px;
@@ -41,14 +40,14 @@
 
     .container{width:100%;max-width:var(--container);margin:0 auto}
 
-    /* ====== NAV (same spacing/weight as home) ====== */
+    /* NAV */
     header{position: static; width:100%; z-index:10;}
     .nav{
       height:var(--navH);
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
-      padding:0 40px 10px;     /* even 40px like home */
+      padding:0 40px 10px;
       max-width:var(--container);
       margin:0 auto;
       position:relative;
@@ -58,61 +57,93 @@
       font-weight:700; letter-spacing:.02em; color:#000; padding:10px;
     }
 
-    /* ====== HERO: Coming soon ====== */
-    .hero{
-      min-height:calc(100vh - var(--navH));
-      padding:48px 40px 40px;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:24px;
-      text-align:center;
+    /* WRITING SECTION */
+    .writing-section{
+      padding:48px 40px 80px;
+      max-width:1000px;
+      margin:0 auto;
     }
-    .soon-emoji{
-      font-size:64px; line-height:1;
-      animation: bob 1.4s ease-in-out infinite;
-      display:inline-block;
+    .writing-header{
+      margin-bottom:48px;
     }
-    @keyframes bob{
-      0%,100%{ transform: translateY(0); }
-      50%    { transform: translateY(-6px); }
-    }
-    .soon-title{
+    .writing-header h1{
       font-weight:900;
-      font-size:58px; line-height:1.05; letter-spacing:-.02em;
+      font-size:48px; 
+      line-height:1.1; 
+      letter-spacing:-.02em;
+      margin-bottom:12px;
     }
-    .soon-sub{
-      max-width:740px;
+    .writing-header p{
+      font-size:18px;
+      color:#666;
+      font-weight:500;
+    }
+
+    /* BLOG CARDS */
+    .blog-list{
+      display:flex;
+      flex-direction:column;
+      gap:32px;
+    }
+    .blog-card{
+      background:var(--card-bg);
+      padding:32px;
+      transition: background 0.2s ease;
+      cursor:pointer;
+      border:1px solid transparent;
+      display:flex;
+      gap:32px;
+      align-items:center;
+    }
+    .blog-card:hover{
+      background:#c2c2c2;
+      border:1px solid #b0b0b0;
+    }
+    .blog-image{
+      width:180px;
+      height:180px;
+      flex-shrink:0;
+      object-fit:cover;
+      background:#b8b8b8;
+    }
+
+
+.salesforce-image{
+  object-fit:contain;
+}
+
+    .blog-content{
+      flex:1;
+    }
+    .blog-card h2{
+      font-size:28px;
       font-weight:700;
-      font-size:20px; line-height:1.45;
-      color:#222;
+      margin-bottom:12px;
+      line-height:1.3;
     }
-    .soon-note{
-      font-size:16px; color:#666;
+    .blog-meta{
+      display:flex;
+      gap:16px;
+      margin-bottom:16px;
+      font-size:14px;
+      color:#666;
+      font-weight:500;
     }
-
-    /* little digging animation (pure CSS/SVG) */
-    .dig-wrap{
-      margin-top:22px;
-      display:flex; align-items:center; justify-content:center; gap:12px;
-      color:#444;
+    .blog-card p{
+      font-size:16px;
+      line-height:1.6;
+      color:#333;
+      margin-bottom:16px;
     }
-    .pile{
-      width:90px; height:36px; position:relative;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,.12));
-    }
-    .pile svg{
-      display:block; width:100%; height:100%;
-    }
-    .shovel{
-      width:44px; height:44px; position:absolute;
-      left:50%; top:-6px; transform-origin: 6px 36px;
-      animation: dig 1.6s ease-in-out infinite;
-    }
-    @keyframes dig{
-      0%,100%{ transform: translate(-10px,0) rotate(-14deg); }
-      50%    { transform: translate(6px,-6px) rotate(10deg); }
+    .read-more{
+      color:var(--dot);
+      font-weight:700;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
     }
 
-    /* ====== FOOTER (same as home) ====== */
+    /* FOOTER */
     footer{padding:0 40px 0}
     .footer{display:flex; gap:139px; padding:59px 0 0}
     .col{display:flex; flex-direction:column; gap:10px; width:15%}
@@ -125,21 +156,28 @@
     .thanks p{font-size:21px; font-weight:700}
     .thanks .dot{color:var(--dot)}
 
-    /* small helper on very narrow viewports */
     @media (max-width: 700px){
-      .soon-title{ font-size:40px; }
-      .soon-sub{ font-size:18px; padding:0 10px; }
+      .writing-header h1{ font-size:36px; }
+      .blog-card{ 
+        flex-direction:column; 
+        padding:24px; 
+      }
+      .blog-image{
+        width:100%;
+        height:200px;
+      }
+      .blog-card h2{ font-size:22px; }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <!-- ===== NAV ===== -->
+    <!-- NAV -->
     <header>
       <nav class="nav">
         <div class="nav-left">
           <a class="nav-link" href="index.html#projects">HOME.</a>
-          <a class="nav-link" href="index.html#playground">PLAYGROUND.</a>
+          <a class="nav-link" href="playground.html">WRITING.</a>
           <a class="nav-link" href="about.html">ABOUT.</a>
         </div>
         <div class="nav-right">
@@ -150,38 +188,93 @@
       </nav>
     </header>
 
-    <!-- ===== PLAYGROUND HERO ===== -->
-    <section class="hero">
-      <div class="soon-emoji" aria-hidden="true">⏰</div>
-      <h1 class="soon-title">Playground is brewing…</h1>
-      <p class="soon-sub">
-        I’m building a corner for tiny experiments, micro-interactions, and fun side projects.
-        Check back soon!
-      </p>
+    <!-- WRITING SECTION -->
+    <section class="writing-section">
+      <div class="writing-header">
+        <h1>Writing.</h1>
+        <p>Technical writing, blog writing, and analysis</p>
+      </div>
 
-      <div class="dig-wrap" aria-label="under construction animation">
-        <!-- dirt mound -->
-        <div class="pile">
-          <svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <path d="M5 55 Q 30 20 80 28 T 155 55 Z" fill="#c9c2b8"/>
-            <ellipse cx="40" cy="50" rx="14" ry="5" fill="#b9b2a8" opacity=".7"/>
-            <ellipse cx="100" cy="52" rx="18" ry="6" fill="#b9b2a8" opacity=".7"/>
-          </svg>
-          <!-- shovel -->
-          <svg class="shovel" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <!-- handle -->
-            <rect x="22" y="4" width="4" height="28" rx="2" fill="#8b5e3c"/>
-            <!-- grip -->
-            <rect x="18" y="2" width="12" height="6" rx="3" fill="#68452b"/>
-            <!-- blade -->
-            <path d="M14 28 L34 28 Q37 36 28 40 Q19 44 14 36 Z" fill="#9aa4ad" stroke="#8a939c" stroke-width="1"/>
-          </svg>
-        </div>
-        <span class="soon-note">🚧 Under construction</span>
+      <div class="blog-list">
+        
+        <!-- Blog 1: Dating Apps -->
+        <a href="dating-app-algorithms.html" class="blog-card">
+          <img src="date.png" alt="Dating app algorithms" class="blog-image">
+          <div class="blog-content">
+            <h2>The Algorithms Behind Modern Love</h2>
+            <div class="blog-meta">
+              <span>Author</span>
+              <span>•</span>
+              <span>Technical Engineering Article </span>
+              <span>•</span>
+              <span>2025</span>
+            </div>
+            <p>How dating apps use computer vision, NLP, and behavioral psychology to engineer engagement—and why that might not align with helping you find love.</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </a>
+
+        <!-- Blog 2: Blockchain -->
+        <a href="blockchain-carbon-markets.html" class="blog-card">
+          <img src="block.png" alt="Blockchain carbon markets" class="blog-image">
+          <div class="blog-content">
+            <h2>Blockchain Carbon Markets and the Ethics of Engineered Sustainability Claims</h2>
+            <div class="blog-meta">
+              <span>Author</span>
+              <span>•</span>
+              <span>Research Blog</span>
+              <span>•</span>
+              <span>2025</span>
+            </div>
+            <p>An analysis of how blockchain-based carbon credit platforms like Toucan Protocol and KlimaDAO create the illusion of climate responsibility through technological greenwashing.</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </a>
+
+        <!-- Blog 3: Snowflake -->
+
+
+        <!-- Blog 3: Salesforce -->
+       <!-- Blog 3: Salesforce -->
+<a href="https://admin.salesforce.com/blog/2024/admin-winter-25-release-dates-countdown" class="blog-card" target="_blank" rel="noopener">
+  <img src="salesy.png" alt="Salesforce Winter 25 release" class="blog-image salesforce-image">
+  <div class="blog-content">
+            <h2>Admin Winter '25 Release: Dates and Countdown</h2>
+            <div class="blog-meta">
+              <span>Author</span>
+              <span>•</span>
+              <span>Salesforce Admin Blog</span>
+              <span>•</span>
+              <span>2024</span>
+            </div>
+            <p>A comprehensive guide to the Winter '25 release timeline for Salesforce admins, covering key dates, sandbox previews, and production rollout schedules.</p>
+            <span class="read-more">Read More ↗</span>
+          </div>
+        </a>
+
+        <a href="https://www.snowflake.com/en/engineering-blog/simplify-sql-workflows-flow-union-by-name/" class="blog-card" target="_blank" rel="noopener">
+  <img src="SNO.png" alt="Snowflake SQL workflows" class="blog-image salesforce-image">
+  <div class="blog-content">
+    <h2>Simplify SQL Workflows: UNION BY NAME</h2>
+    <div class="blog-meta">
+            <span>Product Marketing Contribution</span>
+   
+      <span>•</span>
+      <span>Snowflake Engineering Blog</span>
+      <span>•</span>
+      <span>2025</span>
+    </div>
+    <p>Contributed to product marketing editing, intro development, and positioning for this technical feature article on Snowflake's Engineering Blog.</p>
+    <span class="read-more">Read More ↗</span>
+  </div>
+</a>
+
       </div>
     </section>
 
-    <!-- ===== FOOTER (same as home) ===== -->
+
+
+    <!-- FOOTER -->
     <footer>
       <div class="footer">
         <div class="col">
@@ -193,7 +286,7 @@
           <h3>Navigate.</h3>
           <a href="index.html">HOME</a>
           <a href="index.html#projects">PROJECTS</a>
-          <a href="playground.html">PLAYGROUND</a>
+          <a href="playground.html">PlAYGROUND</a>
           <a href="about.html">ABOUT</a>
           <a href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME</a>
         </div>

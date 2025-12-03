@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FB4LFEMEK2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FB4LFEMEK2');
+    </script>
+    
+    <meta charset="utf-8"/>
+    <title>Snowflake — Product Marketing Intern</title>
+    <meta content="Snowflake Internship Experience" property="og:title"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="yabidabi.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Satoshi", system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+            background: #e8e8e8;
+            color: #000;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #29B5E8;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+        }
+
+        /* Navigation */
+        /* Navigation - matching index.html exactly */
+        header {
+            position: static;
+            width: 100%;
+            z-index: 10;
+        }
+        
+        .nav {
+            height: 90px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 40px 10px;
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-weight: 700;
+            letter-spacing: .02em;
+            color: black;
+            padding: 10px;
+        }
+
+        /* Hero Section */
+        .intro-section {
+            padding: 40px 40px 80px;
+            max-width: 1440px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .intro-columns {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .main-header {
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: #29B5E8;
+        }
+
+        .new-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            padding: 80px 40px;
+            max-width: 1440px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .columns-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #29B5E8;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .normal-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Large Image Section */
+        .image-section {
+            padding: 60px 40px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .large-image {
+            width: 100%;
+            border-radius: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        /* Big Section Dividers */
+        .big-section {
+            padding: 120px 40px 60px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .big-text {
+            font-size: 120px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.03);
+            letter-spacing: -4px;
+            line-height: 1;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 40px 40px 80px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #000;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .content-text {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Key Insight Boxes */
+        .insight-block {
+            background: linear-gradient(135deg, rgba(41, 181, 232, 0.1) 0%, rgba(26, 95, 122, 0.1) 100%);
+            border-left: 4px solid #29B5E8;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .insight-title {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #29B5E8;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .insight-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .stat-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(41, 181, 232, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            background: rgba(41, 181, 232, 0.05);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #29B5E8;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(41, 181, 232, 0.15);
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #29B5E8 0%, #1A5F7A 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .project-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: rgba(41, 181, 232, 0.1);
+            border: 1px solid rgba(41, 181, 232, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #29B5E8;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 60px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #29B5E8, #1A5F7A);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -59px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #29B5E8;
+            border: 4px solid #e8e8e8;
+            box-shadow: 0 0 0 4px rgba(41, 181, 232, 0.3);
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #29B5E8;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .timeline-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Learnings Grid */
+        .learnings-grid {
+            display: grid;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .learning-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 5px solid #29B5E8;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .learning-card:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .learning-emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .learning-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .learning-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Footer */
+        /* Footer - matching index.html exactly */
+        footer {
+            padding: 0 40px 0;
+        }
+        
+        .footer {
+            display: flex;
+            gap: 139px;
+            padding: 59px 0 0;
+        }
+        
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 15%;
+        }
+        
+        .col h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #999;
+        }
+        
+        .col a {
+            font-weight: 500;
+            color: black;
+        }
+        
+        .thanks {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 40px 55px 40px;
+        }
+        
+        .thanks p {
+            font-size: 21px;
+            font-weight: 700;
+        }
+        
+        .thanks .dot {
+            color: #f3382c;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll-triggered animations */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .intro-columns { grid-template-columns: 1fr; }
+            .columns-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-grid { grid-template-columns: 1fr; }
+            .main-header { font-size: 48px; }
+            .big-text { font-size: 80px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { padding: 0 20px 10px; }
+            .nav-left, .nav-right { gap: 15px; }
+            .nav-link { font-size: 12px; padding: 5px; }
+            .intro-section { padding: 20px 20px 40px; }
+            .info-grid { padding: 40px 20px; }
+            .columns-grid { grid-template-columns: 1fr; }
+            .big-section { padding: 60px 20px 30px; }
+            .content-section { padding: 20px 20px 40px; }
+            .main-header { font-size: 36px; }
+            .big-text { font-size: 48px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            footer { padding: 0 20px 0; }
+            .footer { flex-direction: column; gap: 40px; }
+            .thanks { padding: 0 20px 40px 20px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="nav">
+            <div class="nav-left">
+                <a class="nav-link" href="index.html">HOME.</a>
+                <a class="nav-link" href="playground.html">PLAYGROUND.</a>
+                <a class="nav-link" href="about.html">ABOUT.</a>
+            </div>
+            <div class="nav-right">
+                <a class="nav-link" href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+                <a class="nav-link" href="mailto:benyam@usc.edu">EMAIL ↗</a>
+                <a class="nav-link" href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME ↗</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="intro-section">
+        <div class="intro-columns">
+            <div>
+                <h1 class="main-header">Snowflake</h1>
+            </div>
+            <div>
+                <div class="new-text">
+                    Snowflake is redefining how organizations modernize their data infrastructure for the AI era. As a Product Marketing Intern on the Analytics team, I worked at the intersection of content amplification, migration messaging, and partner-driven campaigns. My summer focused on three core initiatives: orchestrating AI Data Cloud Day—a Microsoft-partnered virtual event that achieved 939 registrations and 94% goal attainment, developing strategic messaging frameworks for SQL Server migrations that now guide sales enablement, and curating 12 customer migration stories into a consolidated eBook for pipeline acceleration. Through hands-on collaboration with PMM, partner marketing, competitive intelligence, and field teams, I helped drive $29.4M in influenced ACV while building scalable go-to-market assets for Snowflake's modernization narrative.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Grid -->
+    <section class="info-grid">
+        <div class="columns-grid">
+            <div>
+                <div class="small-title">DURATION</div>
+                <div class="normal-text">June 2024 - August 2024 (3 months)</div>
+            </div>
+            <div>
+                <div class="small-title">TEAM</div>
+                <div class="normal-text">Analytics Marketing, Partner Marketing, PMM, Competitive Intelligence</div>
+            </div>
+            <div>
+                <div class="small-title">RESPONSIBILITIES</div>
+                <div class="normal-text">Event Marketing, Messaging Development, Content Strategy, Campaign Management, Sales Enablement</div>
+            </div>
+            <div>
+                <div class="small-title">ROLE</div>
+                <div class="normal-text">Product Marketing Intern</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Hero Image -->
+    <section class="image-section">
+        <!-- PLACEHOLDER: Replace with your Snowflake office/team photo -->
+        <img src="snowflake-hero.jpg" alt="Snowflake Experience" class="large-image" style="background: linear-gradient(135deg, #29B5E8 0%, #1A5F7A 100%); height: 500px; object-fit: cover;">
+    </section>
+
+    <!-- Section 01: The Context -->
+    <section class="big-section">
+        <div class="big-text">01. The Context</div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">Coming Into the Summer</h2>
+        
+        <p class="content-text fade-in-scroll">
+            When I joined Snowflake's Analytics Marketing team in June 2024, the team was sitting on a goldmine of insights. Through our marketing working group, we'd identified that mid and bottom-of-funnel content about migrations—especially virtual hands-on labs—was driving incredibly strong engagement. But we faced two key challenges: how to extend campaign reach by supplementing our promotion with partner-driven budgets, and how to create more targeted, source-specific messaging that would resonate with customers considering migrations from legacy systems like SQL Server.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">KEY INSIGHT</div>
+            <div class="insight-text">Mid/bottom-of-funnel migration content + virtual hands-on labs were driving strong engagement, but we needed to amplify reach through partner budgets and create more source-specific messaging.</div>
+        </div>
+
+        <p class="content-text fade-in-scroll">
+            At the same time, Snowflake Summit had just concluded, leaving us with an incredible library of content: customer sessions focused on migration, "What's New" product launches, a SnowConvert AI demo, and partner-submitted content. The challenge? All of this high-impact material was sitting in different places without a clear way to package it for mid-funnel engagement. We needed a vehicle to connect it, amplify it, and keep the momentum going post-Summit.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            This context set the stage for my three major projects: AI Data Cloud Day, SQL Server Migration Messaging, and the Customer Migration eBook. Each project was designed to address a specific gap—whether it was content amplification, competitive positioning, or sales enablement—while supporting Snowflake's broader goal of positioning the AI Data Cloud as the modernization platform for the enterprise.
+        </p>
+    </section>
+
+    <!-- Stats -->
+    <section class="content-section">
+        <div class="stats-grid fade-in-scroll">
+            <div class="stat-box">
+                <div class="stat-number">939</div>
+                <div class="stat-label">Event Registrations</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Goal Achievement</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">$29.4M</div>
+                <div class="stat-label">Influenced ACV</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 02: The Work -->
+    <section class="big-section">
+        <div class="big-text">02. The Work</div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">Project 01: AI Data Cloud Day</h2>
+        
+        <p class="content-text fade-in-scroll">
+            AI Data Cloud Day became the answer to our post-Summit challenge. This Microsoft-partnered virtual event, hosted on August 6th, was designed to provide enterprise data architects and technical leaders with practical strategies for migrating off legacy systems and modernizing their data for the AI era.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            <strong>The Strategic Opportunity:</strong> By partnering with Microsoft and leveraging MDF (Marketing Development Funds), we could extend our promotional reach beyond Snowflake's owned channels. The timing—right after Summit—allowed us to repackage strong Summit content into a focused, partner-led campaign that would keep the modernization conversation alive.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">THE CHALLENGE</div>
+            <div class="insight-text">We had just 6 weeks from ideation to launch. The clock was ticking to curate content, secure executive participation, plan promotion, and coordinate across PMM, partner marketing, operations, and video teams.</div>
+        </div>
+    </section>
+
+    <!-- Project Cards -->
+    <section class="content-section">
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image-placeholder">
+                    <!-- PLACEHOLDER: Add AI Data Cloud Day event graphic -->
+                    ☁️
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Content Curation</h3>
+                    <p class="project-description">
+                        I attended Snowflake Summit sessions to identify the most relevant migration-focused content. Working with the video team, we organized edits of Summit sessions and customer stories, creating a sizzle reel and highlight reel with captions that flipped concerns about AI into motivation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Video Production</span>
+                        <span class="tag">Content Selection</span>
+                        <span class="tag">Summit Assets</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-placeholder">
+                    <!-- PLACEHOLDER: Add executive fireside chat screenshot -->
+                    🎤
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Executive Fireside Chat</h3>
+                    <p class="project-description">
+                        Coordinated a fireside chat featuring Padmaja Vrudhula (Snowflake VP) and Dipti Borkar (Microsoft VP), drafting questions and outlines that aligned with our "Modernizing for the AI Era" theme. This became the anchor content piece for the event.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Executive Coordination</span>
+                        <span class="tag">Script Development</span>
+                        <span class="tag">Partnership</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-placeholder">
+                    <!-- PLACEHOLDER: Add social media posts screenshot -->
+                    📱
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Multi-Channel Promotion</h3>
+                    <p class="project-description">
+                        Led promotional strategy across email, social (LinkedIn), Mutiny web banners, and ABM campaigns. Drafted LinkedIn copy for executive amplification and coordinated with leadership (Roma, Erin, Cindy) to share event content. Our ABM campaign reached 10K+ accounts with 1.11% CTR (vs. 0.9% benchmark).
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Social Strategy</span>
+                        <span class="tag">ABM</span>
+                        <span class="tag">Email Marketing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-placeholder">
+                    <!-- PLACEHOLDER: Add metrics dashboard -->
+                    📊
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Results & Impact</h3>
+                    <p class="project-description">
+                        Despite the 6-week timeline, we achieved 939 registrations (94% to goal) for the August 6 live event. Social posts generated 1,130 total interactions with 3.15% average engagement rate (3x industry benchmark). Looking ahead to Q3, we're targeting an additional 1.5K on-demand registrations supported by MDF funds.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Campaign Analytics</span>
+                        <span class="tag">Performance Tracking</span>
+                        <span class="tag">Pipeline Influence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">KEY LEARNING</div>
+            <div class="insight-text">Email proved to be the strongest conversion lever for this technical audience (73% of registrations). For future events, this channel mix gives us a grounded playbook for where to invest first and where to layer in additional channels.</div>
+        </div>
+
+        <p class="content-text fade-in-scroll">
+            <strong>What made this successful:</strong> By taking Summit sessions and reframing them into a mid-funnel story, we kept the post-Summit conversation alive. Partner content from Microsoft and our SIs gave the program built-in credibility and reach. The cross-functional collaboration—working closely with PMM, partner marketing, operations, and the video team—was essential to pulling everything together in such a compressed timeline.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            <strong>What I learned:</strong> MDF fund activation takes longer than expected. Building that lead time (2+ quarters) into planning means funding, content, and promotion can all move in sync. I also learned the importance of designing content so it's "born with multiple lives"—ready to flow into marketing channels AND sales enablement from day one.
+        </p>
+    </section>
+
+    <!-- SQL Server Section -->
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">Project 02: SQL Server Migration Messaging</h2>
+        
+        <p class="content-text fade-in-scroll">
+            While AI Data Cloud Day focused on broad modernization themes, we recognized a more targeted opportunity: SQL Server migrations. Snowflake has historically been successful with these migrations, but we lacked source-specific messaging and positioning that sales teams could use in competitive situations.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            <strong>The Goal:</strong> Build a scalable messaging framework that moves customers from legacy pain points (SQL Server) to AI-readiness (Snowflake), with supporting assets for sales enablement and web presence.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">THE RESEARCH PROCESS</div>
+            <div class="insight-text">I shadowed Cindy in customer conversations, partnered with the Competitive Intelligence team for insights, interviewed acquisition AEs actively running SQL Server migrations, and reviewed third-party research plus existing customer stories. This multi-angle approach ensured our messaging was grounded in real customer pain points and competitive dynamics.</div>
+        </div>
+    </section>
+
+    <!-- Timeline of Development -->
+    <section class="content-section">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Week 1-2 • Research Phase</div>
+                <div class="timeline-title">Understanding the Customer Reality</div>
+                <div class="timeline-text">
+                    Through conversations with competitive intelligence and acquisition AEs, three pain points emerged consistently: (1) Rising costs and rigid legacy architecture with SQL Server, (2) Data silos slowing down collaboration, and (3) Fragmented governance creating security risks. These became the foundation for our messaging pillars.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Week 3-4 • Messaging Development</div>
+                <div class="timeline-title">Building the Three-Pillar Framework</div>
+                <div class="timeline-text">
+                    We developed messaging under three pillars that directly addressed SQL Server limitations: <strong>(1) Easily Modernize on a Proven AI Data Cloud with Instant Scalability</strong>—leverage your SQL skillset on Snowflake's AI-native platform with automated admin and instant elasticity. <strong>(2) Break Down Internal & External Silos for Seamless Connectivity</strong>—enable zero-copy sharing, open table format interoperability, and access to third-party data via Snowflake Marketplace. <strong>(3) Unify Security & Governance</strong>—simplify compliance with automatic sensitive data detection, centralized governance, and cross-cloud business continuity.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Week 5-6 • Asset Development</div>
+                <div class="timeline-title">From Framework to Execution</div>
+                <div class="timeline-text">
+                    With messaging finalized, we applied it to refresh the SQL Server to Snowflake webpage—updating copy to align with the three pillars, reordering benefit sections for narrative clarity, and submitting the Wrike ticket for coordination with web, brand, and editorial teams. In parallel, I began building a customer story pipeline by interviewing AEs and identifying SQL Server wins that could feed future enablement content.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <p class="content-text fade-in-scroll">
+            <strong>The Impact:</strong> The messaging framework is now being used across sales enablement materials, the refreshed webpage, and internal reference documents. More importantly, it established a repeatable model: what worked for SQL Server can be applied to other legacy sources like Teradata and Oracle.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">KEY LEARNING</div>
+            <div class="insight-text">Partnering with the Competitive Intelligence team was transformational. Their perspective helped sharpen positioning in ways that directly addressed competitor narratives. Great messaging isn't just about what you say—it's about understanding the entire competitive landscape.</div>
+        </div>
+    </section>
+
+    <!-- eBook Section -->
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">Project 03: Customer Migration eBook</h2>
+        
+        <p class="content-text fade-in-scroll">
+            Snowflake has a strong portfolio of customer migration stories—spanning industries, use cases, and migration types. The gap? These stories lived in different places and formats. For prospects, partners, or sales teams, there was no single, easy-to-access asset that pulled them together into a unified narrative.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            <strong>The Opportunity:</strong> Create a consolidated, gated eBook that would serve multiple functions: inspire technical and business decision-makers with real-world examples, accelerate pipeline by giving sales teams credible proof points, and integrate seamlessly into H2 campaigns tied to modernization and AI transformation.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">CONTENT SELECTION FRAMEWORK</div>
+            <div class="insight-text">I created a structured framework to ensure we had both variety and relevance: (1) Industry & brand recognition—prioritize well-known companies across diverse sectors. (2) Strong metrics & outcomes—include quantifiable business and technical results. (3) Migration type variety—showcase SQL Server, Teradata, PostgreSQL, and cloud-native migrations. (4) Alignment with AI modernization—ensure stories supported our broader transformation narrative.</div>
+        </div>
+
+        <p class="content-text fade-in-scroll">
+            Using this framework, I reviewed hundreds of case studies, Summit sessions, and partner-submitted content to shortlist 12 compelling stories. Featured customers included PayPal (PostgreSQL migration with 500M payments processed in 3 months), Marriott (legacy system modernization), and Pfizer (data warehouse transformation)—spanning retail, hospitality, healthcare, and financial services.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            I coordinated with customer marketing, partner marketing, and editorial teams to get legal approval and story polish. The challenge was balancing Snowflake-led wins with partner-submitted content while maintaining consistent quality and narrative flow.
+        </p>
+
+        <p class="content-text fade-in-scroll">
+            <strong>The Deliverable:</strong> A downloadable eBook titled "Secrets of Snowflake Migration Success" that will be promoted across Snowflake.com, LinkedIn, email nurtures, sales follow-ups, and field events. It's designed to support pipeline acceleration, partner enablement, and campaigns tied to modernization initiatives.
+        </p>
+
+        <div class="insight-block fade-in-scroll">
+            <div class="insight-title">KEY LEARNING</div>
+            <div class="insight-text">Not everything needs to be net-new to be valuable. By repurposing stories that were already approved and published, we avoided lengthy bottlenecks while still delivering fresh impact through strategic reframing. Pre-planning ebook assets and story pipelines in sync with sales programs (e.g., SQL Server now, Teradata next) means we can hit the ground running.</div>
+        </div>
+    </section>
+
+    <!-- Section 03: Learnings -->
+    <section class="big-section">
+        <div class="big-text">03. Key Learnings</div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">What This Summer Taught Me</h2>
+
+        <div class="learnings-grid">
+            <div class="learning-card">
+                <div class="learning-emoji">⏰</div>
+                <div class="learning-title">Plan for the Long Game</div>
+                <div class="learning-text">
+                    The MDF fund activation process takes time—longer than I initially expected. Building lead time (2+ quarters) into planning ensures funding, content, and promotion can all move in sync. This taught me the importance of strategic foresight in B2B marketing campaigns. For AI Data Cloud Day, MDF funds became available later in the cycle, meaning the initial live event leaned heavily on Snowflake-led channels. Next time, I'd start the partnership conversation even earlier.
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-emoji">🎯</div>
+                <div class="learning-title">Competitive Intelligence is Gold</div>
+                <div class="learning-text">
+                    Partnering with the Compete team was transformational for messaging development. Their insights helped sharpen positioning in ways that directly addressed competitor narratives. I learned that great messaging isn't just about what you say—it's about understanding the entire competitive landscape. The Compete team should be looped into more messaging exercises early. Their perspective makes the difference between generic positioning and sharp, defensible competitive angles.
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-emoji">🔄</div>
+                <div class="learning-title">Repurpose Smartly, Move Faster</div>
+                <div class="learning-text">
+                    Not everything needs to be net-new to be valuable. By repurposing already-approved customer stories and Summit content, I avoided lengthy approval bottlenecks while still delivering fresh impact through strategic reframing. This showed me that optimization and reuse of existing high-quality content can save time, resources, and still deliver fresh impact when framed in a new narrative. Speed matters in marketing—especially in fast-moving campaigns.
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-emoji">📞</div>
+                <div class="learning-title">Align Early, Align Often</div>
+                <div class="learning-text">
+                    Pre-planning content with sales alignment is critical. An asset like an eBook gains traction when it directly supports active sales motions. Starting earlier—building the next wave of stories (like Teradata) ahead of time—means hitting the ground running instead of ramping up after launch. For AI Data Cloud Day, activating sales enablement weeks before launch would have allowed AEs to use the value prop to open conversations and register accounts proactively.
+                </div>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-emoji">🎪</div>
+                <div class="learning-title">Events Need End-to-End Thinking</div>
+                <div class="learning-text">
+                    Designing content so it's "born with multiple lives" is key. Content should flow naturally into marketing channels AND sales enablement from day one. For AI Data Cloud Day, we could have baked Summit cross-promotion into session design from the start so sessions naturally tied into follow-up campaigns. This creates momentum that lasts beyond the launch moment and maximizes the value of every content investment.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Image Gallery -->
+    <section class="content-section">
+        <h2 class="section-header fade-in-scroll">Highlights & Moments</h2>
+        
+        <div class="project-grid">
+            <div class="project-image-placeholder" style="height: 350px; border-radius: 20px;">
+                <!-- PLACEHOLDER: Add Snowflake office/team photo -->
+                🏢
+            </div>
+            <div class="project-image-placeholder" style="height: 350px; border-radius: 20px;">
+                <!-- PLACEHOLDER: Add event screenshot or promo visual -->
+                🎬
+            </div>
+            <div class="project-image-placeholder" style="height: 350px; border-radius: 20px;">
+                <!-- PLACEHOLDER: Add team collaboration photo -->
+                👥
+            </div>
+            <div class="project-image-placeholder" style="height: 350px; border-radius: 20px;">
+                <!-- PLACEHOLDER: Add workspace/desk setup photo -->
+                💻
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="col">
+                <h3>Connect.</h3>
+                <a href="https://www.linkedin.com/in/yabsera-benyam/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+                <a href="mailto:benyam@usc.edu">EMAIL ↗</a>
+            </div>
+            <div class="col">
+                <h3>Navigate.</h3>
+                <a href="index.html">HOME</a>
+                <a href="index.html#projects">PROJECTS</a>
+                <a href="playground.html">PLAYGROUND</a>
+                <a href="about.html">ABOUT</a>
+                <a href="https://drive.google.com/file/d/117NL5NJ5JoCqBD0iRe7DB9dxWjsi4-uS/view?usp=sharing" target="_blank" rel="noopener">RESUME</a>
+            </div>
+        </div>
+        <div class="thanks">
+            <p>[THANK YOU FOR VISITING]<span class="dot">.</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, .project-card, .stat-box, .learning-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.borderColor = '#fff';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.borderColor = '#29B5E8';
+            });
+        });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stagger animation delays for cards
+        const cards = document.querySelectorAll('.project-card, .learning-card, .stat-box');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.2}s`;
+        });
+    </script>
+</body>
+</html>
